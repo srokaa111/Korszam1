@@ -1,0 +1,78 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\DeclareMathOperator\arctanh{arctanh}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{2} 
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\begin{document}
+\begin{center}
+\begin{Huge}
+3D Lorentz transzformáció osztálya\\
+\end{Huge}
+\begin{large}
+Sróka András\\
+\end{large}
+\end{center}
+A Lorentz transzformációk olyan transzformációk amikre a
+\begin{equation}
+I = x_0^2-x_1^2-x_2^2-x_3^2
+\end{equation}
+ívhossz értéke invariáns.\\
+Az egyik alapvető ilyen művelet az x tengely menti Lorentz boost, amit a következő egyenletek írnak le:
+\renewcommand{\baselinestretch}{0.5}
+\begin{equation}
+t' = \frac{\gamma \left( ct-\beta x \right)}{c}$$$$
+x' = \gamma \left( x-\beta ct \right)$$$$
+y'=y$$$$
+z'=z
+\end{equation}
+\renewcommand{\baselinestretch}{2} 
+ahol $\gamma = \frac{1}{\sqrt{1-\beta^2}}$, $\beta  = \frac{v}{c}$, $c$ a fény sebessége és $v$ az eredetihez lépest mozgó koordináta rendszer sebessége.\\
+Ezt lehet általánosítani egy tetszőleges irányú transzformációvá egy mátrixszorzással:
+$$X'=L(v)X$$
+ahol\begin{center}
+$X = \begin{pmatrix}
+ct\\x\\y\\z
+\end{pmatrix}
+$   és   $
+X' = \begin{pmatrix}
+ct'\\x'\\y'\\z'
+\end{pmatrix}$
+\end{center}
+Ekkor a transzformáció $L(v)$ mátrixa
+\begin{equation}
+L(v) = \begin{pmatrix}
+\gamma & -\gamma\frac{v_x}{c} & -\gamma\frac{v_y}{c} & -\gamma\frac{v_z}{c}\\
+-\gamma\frac{v_x}{c} & 1+(\gamma-1)\frac{v_x^2}{v^2} & (\gamma-1)\frac{v_xv_y}{v^2} & (\gamma-1)\frac{v_xv_z}{v^2}\\
+-\gamma\frac{v_y}{c} & (\gamma-1)\frac{v_xv_y}{v^2} & 1+(\gamma-1)\frac{v_y^2}{v^2} & (\gamma-1)\frac{v_yv_z}{v^2}\\
+-\gamma\frac{v_z}{c} & (\gamma-1)\frac{v_xv_z}{v^2} & (\gamma-1)\frac{v_yv_z}{v^2} & 1+(\gamma-1)\frac{v_z^2}{v^2}\\
+\end{pmatrix}
+\end{equation}
+ahol $v_i$ a sebesség i irányú komponense, $v$ pedig a sebességvektor nagysága.\\
+Lorentz transformációk a forgatások is, melyeket a
+\begin{equation}
+R_x(\theta)=\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & \cos(\theta) & \sin(\theta) \\
+0 & 0 & -\sin(\theta) & \cos(\theta) \\
+\end{pmatrix}
+R_y(\theta)=\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & \cos(\theta) & 0 & \sin(\theta) \\
+0 & 0 & 1 & 0 \\
+0 & -\sin(\theta) & 0 & \cos(\theta) \\
+\end{pmatrix}$$$$
+R_z(\theta)=\begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & \cos(\theta) & \sin(\theta) & 0 \\
+0 & -\sin(\theta) & \cos(\theta) & 0 \\
+0 & 0 & 0 & 1 \\
+\end{pmatrix}
+\end{equation}
+mátrixok írnak le, ahol $\theta$ az adott tengley körüli forgatás szöge.\\
+\bigskip
+Emellett Lorentz transzformációk a tér-, és időtükrözés transzformációk is.\\
+A Lorentz boostot le lehet írni egy hiperbolikus forgatásként is, aminek a szöge $\alpha=\arctanh \left(\frac{v}{c}\right)$, ahol $\alpha$ a rapiditás.
+\end{document}
